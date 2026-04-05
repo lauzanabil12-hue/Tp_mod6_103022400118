@@ -2,13 +2,20 @@
 {
     static void Main(string[] args)
     {
-        SayaMusicTrack lagu1 = new SayaMusicTrack("Lagu A");
-        SayaMusicTrack lagu2 = new SayaMusicTrack("Lagu B");
+        try
+        {
+            SayaMusicTrack lagu = new SayaMusicTrack("Lagu Testing");
 
-        lagu1.IncreasePlayCount(5);
-        lagu2.IncreasePlayCount(3);
+            for (int i = 0; i < 5; i++)
+            {
+                lagu.IncreasePlayCount(2000000);
+            }
 
-        lagu1.PrintTrackDetails();
-        lagu2.PrintTrackDetails();
+            lagu.PrintTrackDetails();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
     }
 }
